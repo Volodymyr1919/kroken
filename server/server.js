@@ -10,7 +10,7 @@ const   express     = require('express'),
 require('dotenv').config();
 
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: "https://krok-en.onrender.com",
 };
 
 MongoClient.connect(process.env.MONGODB_URI)
