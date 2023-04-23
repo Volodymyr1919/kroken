@@ -9,12 +9,16 @@ const   express     = require('express'),
 
 require('dotenv').config();
 
+const corsOptions = {
+    origin: "https://krok-en.onrender.com",
+};
+
 MongoClient.connect(process.env.MONGODB_URI)
 .then(client => {
     console.log('Connected sucessfully to DB');
 
     app.use(express.static(path.resolve(__dirname, '../client')));
-    app.use(cors());
+    app.use(cors(corsOptions));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
