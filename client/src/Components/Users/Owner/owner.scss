@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import "../../scss/colors.scss";
+
+div.page__owner{
+    width: 100%;
+    height: 100%;
+    background: url("../../../Assets/img/ian-kelsall-MEUvVqkU3QI-unsplash.jpg");
+	background-position: center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    div.owner__about{
+        z-index: 200;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "offers carousel history"
+            "offers users history";
+        div.alice-carousel{
+            grid-area: carousel;
+            width: 300px;
+            height: 360px;
+            position: relative;
+            background: $blur_bg;
+            backdrop-filter: blur(8px);
+            box-sizing: border-box;
+            padding: 0 10px;
+            border-radius: 8px;
+            div{
+                height: 100%;
+                div.alice-carousel__wrapper{
+                    height: 100%;
+                    ul.alice-carousel__stage{
+                        height: 100%;
+                        li.alice-carousel__stage-item{
+                            height: 100%;
+                            div.about__info{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                                width: 100%;
+                                height: 100%;
+                                p{
+                                    font-family: 'Raleway', sans-serif;
+                                    color: $fdbck_h;
+                                    letter-spacing: 1.5px;
+                                    width: 100%;
+                                }
+                            }
+                            div.about__newOffer{
+                                form{
+                                    display: flex;
+                                    flex-direction: column;
+                                    div.newOffer__form{
+                                        box-sizing: border-box;
+                                        padding: 10px 0;
+                                        span.form__title{
+                                            color: $fdbck_h;
+                                            line-height: 30px;
+                                        }
+                                        div.MuiFormControl-root{
+                                            label.MuiFormLabel-root{
+                                                color: $sbm_txt
+                                            }
+                                            label.Mui-focused{
+                                                color: $fdbck_h;
+                                            }
+                                            div.MuiInputBase-root{
+                                                &::before{
+                                                    border-bottom: 1px solid $sbm_txt
+                                                }
+                                                input.MuiInputBase-input{
+                                                    color: $sbm_txt;
+                                                    &:-webkit-autofill{
+                                                        transition: background-color 5000s;
+                                                          -webkit-text-fill-color: $icon_input !important;
+                                                        &:hover{
+                                                            transition: background-color 5000s;
+                                                              -webkit-text-fill-color: $icon_input !important;
+                                                        }
+                                                        &:focus{
+                                                            transition: background-color 5000s;
+                                                              -webkit-text-fill-color: $icon_input !important;
+                                                        }
+                                                        &:active{
+                                                            transition: background-color 5000s;
+                                                              -webkit-text-fill-color: $icon_input !important;
+                                                        }
+                                                    }
+                                                }
+                                                &::after{
+                                                    border-bottom: 1px solid $fdbck_h;
+                                                }
+                                            }
+                                        }
+                                        .errorMessage {
+                                            height: 15px;
+                                            font-size: 12px;
+                                            color: $err_txt;
+                                            display: block;
+                                            font-weight: 700;
+                                        }
+                                    }
+                                    button{
+                                        border: 1px solid $fdbck_btn_bord;
+                                        color: $fdbck_h;
+                                        &:hover{
+                                            background-color: $fdbck_btn_hov_bg;
+                                            border: 1px solid $fdbck_h;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ul.alice-carousel__dots{
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                left: 45%;
+                bottom: 0;
+                li.alice-carousel__dots-item{
+                    background: $inact_dot;
+                }
+                li.__active{
+                    background: $fdbck_h;
+                }
+            }
+        }
+        div.features__allUsers{
+            grid-area: users;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            width: 1fr;
+            overflow-y: scroll;
+            gap: 10px;
+            p{
+                font-family: 'Barlow', sans-serif;
+                color: $fdbck_h;
+                line-height: 30px;
+                letter-spacing: 1.5px;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            p.allUsers__user{
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $blur_bg;
+                backdrop-filter: blur(8px);
+                border-radius: 10px;
+            }
+        }
+        .features__history{
+            grid-area: history;
+        }
+        .features__offers{
+            grid-area: offers;
+        }
+        div.features__history,
+        div.features__offers{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            p{
+                font-family: 'Barlow', sans-serif;
+                color: $fdbck_h;
+                line-height: 30px;
+                letter-spacing: 1.5px;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            div.offers__card{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                background: $blur_bg;
+                backdrop-filter: blur(8px);
+                border-radius: 10px;
+                box-sizing: border-box;
+                padding: 8px;
+                height: fit-content;
+                p{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        div.about__features{
+            display: none;
+            width: 100%;
+            height: calc(100% - 360px);
+            box-sizing: border-box;
+            div.alice-carousel{
+                width: 100%;
+                background: transparent;
+                backdrop-filter: none;
+                height: 100%;
+                div{
+                    width: 100%;
+                    height: 100%;
+                    div.alice-carousel__wrapper{
+                        width: 100%;
+                        height: 100%;
+                        ul.alice-carousel__stage{
+                            width: 100%;
+                            height: 100%;
+                            li.alice-carousel__stage-item{
+                                width: 100%;
+                                height: 100%;
+                                div.features__allUsers{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    height: 100%;
+                                    overflow-y: scroll;
+                                    gap: 10px;
+                                    p{
+                                        font-family: 'Barlow', sans-serif;
+                                        color: $fdbck_h;
+                                        line-height: 30px;
+                                        letter-spacing: 1.5px;
+                                        padding: 0;
+                                        margin: 0;
+                                        width: 100%;
+                                    }
+                                    p.allUsers__user{
+                                        height: 60px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        background: $blur_bg;
+                                        backdrop-filter: blur(8px);
+                                        border-radius: 10px;
+                                    }
+                                }
+                                div.features__offers{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: 10px;
+                                    height: 100%;
+                                    overflow-y: scroll;
+                                    p{
+                                        font-family: 'Barlow', sans-serif;
+                                        color: $fdbck_h;
+                                        line-height: 30px;
+                                        letter-spacing: 1.5px;
+                                        padding: 0;
+                                        margin: 0;
+                                        width: 100%;
+                                    }
+                                    div.offers__card{
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-end;
+                                        justify-content: center;
+                                        background: $blur_bg;
+                                        backdrop-filter: blur(8px);
+                                        border-radius: 10px;
+                                        box-sizing: border-box;
+                                        padding: 8px;
+                                        height: fit-content;
+                                        p{
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                ul.alice-carousel__dots{
+                    left: 45%;
+                }
+            }
+        }
+    }
+
+    div.page__bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $main_bg;
+        z-index: 100;
+    }
+}
+.MuiDialog-root{
+    .MuiBackdrop-root{
+        background-color: $muibckdr_bg;
+    }
+}

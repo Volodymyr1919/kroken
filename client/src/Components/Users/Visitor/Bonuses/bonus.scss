@@ -1,0 +1,71 @@
+@import "../../../scss/colors.scss";
+
+div.personalPage__bonus{
+    width: 100%;
+    height: 108%;
+    margin-top: -64px;
+    background: url("../../../../Assets/img/ian-kelsall-MEUvVqkU3QI-unsplash.jpg");
+	background-position: center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    form{
+        z-index: 200;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: $blur_bg;
+        backdrop-filter: blur(6px);
+        div.MuiFormControl-root{
+            label.MuiFormLabel-root{
+                color: $sbm_txt;
+            }
+            label.Mui-focused{
+                color: $clear_wht;
+            }
+            div.MuiInputBase-root{
+                &::before{
+                    border-bottom: 1px solid $sbm_txt;
+                }
+                input.MuiInputBase-input{
+                    color: $sbm_txt;
+                }
+                &::after{
+                    border-bottom: 1px solid $clear_wht;
+                }
+            }
+        }
+        .errorMessage {
+			height: 15px;
+			font-size: 12px;
+			color: $err_txt;
+			display: block;
+			font-weight: 700;
+		}
+        button{
+            border: 1px solid $bonus_btn_bor;
+            color: $bonus_btn_txt;
+            &:hover{
+                background-color: $bonus_btn_bg_hov;
+                border: 1px solid $clear_wht;
+            }
+        }
+    }
+    
+    div.personalPage__bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $main_bg;
+        z-index: 100;
+    }
+}

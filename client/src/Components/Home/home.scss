@@ -1,0 +1,78 @@
+@import "../scss/colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
+div.home{
+    height: calc(100% - 60px);
+    width: 100%;
+    background: $home_bg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../Assets/img/ian-kelsall-MEUvVqkU3QI-unsplash.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    div.home__about{
+        width: 70%;
+        height: fit-content;
+        border-radius: 15px;
+        background: $bghome__about;
+        box-sizing: border-box;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        color: $about_txt;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p.about__title{
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: $about_title;
+        }
+        p.about__users{
+            font-family: 'Montserrat', sans-serif;
+        }
+        div.about__buttons{
+            .buttons__button{
+                color: $about_buttons;
+            }
+        }
+    }
+    div.home__bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $main_bg;
+        z-index: 100;
+    }
+}
+
+.homeAbout{
+    div.MuiPaper-root{
+        max-width: 700px;
+        height: 500px;
+        div.MuiDialogContent-root{
+            box-sizing: border-box;
+            height: calc(100% - 92px);
+            p{
+                height: 100%;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 20px 20px 0 20px;
+                margin-bottom: 20px;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+        div.MuiDialogActions-root{
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@100&display=swap');
+@import "../scss/colors.scss";
+
+div.NFPage{
+    width: 100%;
+    height: 108%;
+    margin-top: -64px;
+    background: url("../../Assets/img/ian-kelsall-MEUvVqkU3QI-unsplash.jpg");
+	background-position: center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+
+    div.NFPage__text{
+        z-index: 200;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: $blur_bg;
+        backdrop-filter: blur(6px);
+        p{
+            span.text__number{
+                color: $clear_red;
+            }
+            color: $clear_wht;
+            font-size: 40px;
+            &:first-child{
+                font-family: 'Bebas Neue', cursive;
+                letter-spacing: 8px;
+            }
+            &:last-child{
+                font-family: 'Josefin Sans', sans-serif;
+            }
+        }
+    }
+
+    div.NFPage__bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $main_bg;
+        z-index: 100;
+    }
+}

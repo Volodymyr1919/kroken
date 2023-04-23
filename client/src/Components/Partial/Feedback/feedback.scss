@@ -1,0 +1,76 @@
+@import "../../scss/colors.scss";
+
+div.MuiBox-root{
+    background: $fdbck_bg;
+    backdrop-filter: blur(8px);
+    h2{
+        color: $fdbck_h;
+    }
+    div.MuiBox-root{
+        background: transparent;
+        form{
+            display: flex;
+            flex-direction: column;
+            div.feedback__form{
+                box-sizing: border-box;
+                padding: 10px 0;
+                span.form__title{
+                    color: $fdbck_h;
+                    line-height: 30px;
+                }
+                div.MuiFormControl-root{
+                    background: transparent;
+                    label.MuiFormLabel-root{
+                        color: $sbm_txt;
+                    }
+                    label.Mui-focused{
+                        color: $fdbck_h;
+                    }
+                    div.MuiInputBase-root{
+                        &::before{
+                            border-bottom: 1px solid $sbm_txt;
+                        }
+                        input.MuiInputBase-input{
+                            color: $sbm_txt;
+                            &:-webkit-autofill{
+                                transition: background-color 5000s;
+                                    -webkit-text-fill-color: $icon_input !important;
+                                &:hover{
+                                    transition: background-color 5000s;
+                                        -webkit-text-fill-color: $icon_input !important;
+                                }
+                                &:focus{
+                                    transition: background-color 5000s;
+                                        -webkit-text-fill-color: $icon_input !important;
+                                }
+                                &:active{
+                                    transition: background-color 5000s;
+                                        -webkit-text-fill-color: $icon_input !important;
+                                }
+                            }
+                        }
+                        &::after{
+                            border-bottom: 1px solid $fdbck_h;
+                        }
+                    }
+                }
+                .errorMessage {
+                    height: 15px;
+                    font-size: 12px;
+                    color: $err_txt;
+                    display: block;
+                    font-weight: 700;
+                }
+            }
+            button{
+                border: 1px solid $fdbck_btn_bord;
+                color: $fdbck_h;
+                &:hover{
+                    background-color: $fdbck_btn_hov_bg;
+                    border: 1px solid $fdbck_h;
+                }
+            }
+                                
+        }
+    }
+}

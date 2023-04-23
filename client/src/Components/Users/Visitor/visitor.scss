@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import "../../scss/colors.scss";
+
+div.page__visitor{
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+    background: url("../../../Assets/img/ian-kelsall-MEUvVqkU3QI-unsplash.jpg");
+	background-position: center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    div.visitor__about{
+        width: 100%;
+        height: 100%;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div.about__info{
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            p{
+                font-family: 'Raleway', sans-serif;
+                color: $fdbck_h;
+                width: 300px;
+                letter-spacing: 1.5px;
+            }
+        }
+        div.about__offers{
+            height: calc(100% - 300px);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            overflow-y: scroll;
+            box-sizing: border-box;
+            padding: 15px 0;
+            div.offers__one{
+                p{
+                    margin: 0;
+                    padding: 0;
+                    color: $fdbck_h;
+                    letter-spacing: 2px;
+                    line-height: 30px;
+                }
+                width: 80%;
+                height: fit-content;
+                box-sizing: border-box;
+                padding: 5px 10px;
+                background: $blur_bg;
+                backdrop-filter: blur(8px);
+            }
+        }
+    }
+
+    div.page__bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $main_bg;
+        z-index: 100;
+    }
+}
