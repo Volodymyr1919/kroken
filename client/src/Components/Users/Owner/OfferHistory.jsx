@@ -19,7 +19,7 @@ const OfferHistory = observer((props) => {
                 resolve();
             })
             .then(() => {
-                return RequestStore.doGet("/oldPosts/" + myBusinessN)
+                return RequestStore.doGet(ConfigStore._url + "/oldPosts/" + myBusinessN)
             })
             .then((res) => {
                 ConfigStore.setPostsHistory(res);

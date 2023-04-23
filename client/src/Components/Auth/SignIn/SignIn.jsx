@@ -33,7 +33,7 @@ const SignIn = observer(() => {
           resolve();
         })
         .then(() => {
-          return RequestStore.doPost("/signin", {
+          return RequestStore.doPost(ConfigStore._url + "/signin", {
             username : (data.username).replace(/ /g,"_"),
             password : data.password
           })

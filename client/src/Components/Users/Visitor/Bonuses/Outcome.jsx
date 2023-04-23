@@ -25,7 +25,7 @@ const Outcome = observer(() => {
           resolve();
         })
         .then(() => {
-          return RequestStore.doPost("/spendbonus", {
+          return RequestStore.doPost(ConfigStore._url + "/spendbonus", {
             id : localStorage.getItem("myAppId"),
             bonus : data.bonus
           })

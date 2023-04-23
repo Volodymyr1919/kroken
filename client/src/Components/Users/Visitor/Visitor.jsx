@@ -20,7 +20,7 @@ const Visitor = observer(() => {
             resolve();
         })
         .then(() => {
-            return RequestStore.doGet("/me/" + localStorage.getItem("myAppId"))
+            return RequestStore.doGet(ConfigStore._url + "/me/" + localStorage.getItem("myAppId"))
         })
         .then((res) => {
             setMyData(res);

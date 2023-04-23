@@ -40,7 +40,7 @@ const SignUp = observer(() => {
           resolve();
         })
         .then(() => {
-          return RequestStore.doPost("/signup", {
+          return RequestStore.doPost(ConfigStore._url + "/signup", {
             username        : (data.username).replace(/ /g,"_"),
             password        : data.password,
             business_name   : (data.business_name).replace(/ /g,"_"),

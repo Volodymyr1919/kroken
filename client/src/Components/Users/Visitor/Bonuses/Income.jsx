@@ -16,7 +16,7 @@ const Income = observer(() => {
             resolve();
         })
         .then(() => {
-            return RequestStore.doPost("/getbonus", {
+            return RequestStore.doPost(ConfigStore._url + "/getbonus", {
                 id : localStorage.getItem("myAppId")
             })
         })

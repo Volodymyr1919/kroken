@@ -29,7 +29,7 @@ const Owner = observer(() => {
             resolve();
         })
         .then(() => {
-            return RequestStore.doGet("/me/" + localStorage.getItem("myAppId"))
+            return RequestStore.doGet(ConfigStore._url + "/me/" + localStorage.getItem("myAppId"))
         })
         .then((res) => {
             setMyData(res);
@@ -50,7 +50,7 @@ const Owner = observer(() => {
             resolve();
         })
         .then(() => {
-            return RequestStore.doPost("/offer", {
+            return RequestStore.doPost(ConfigStore._url + "/offer", {
                 business_name       : myData.business_name,
                 condition           : data.condition,
                 required_bonuses    : data.requiredBonuses,

@@ -18,7 +18,7 @@ const Offers = observer((props) => {
                 resolve();
             })
             .then(() => {
-                return RequestStore.doGet("/posts/" + myData.business_name)
+                return RequestStore.doGet(ConfigStore._url + "/posts/" + myData.business_name)
             })
             .then((res) => {
                 setPosts(res);

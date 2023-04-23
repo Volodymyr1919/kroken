@@ -17,7 +17,7 @@ const AllUsers = observer((props) => {
                 resolve();
             })
             .then(() => {
-                return RequestStore.doGet("/users")
+                return RequestStore.doGet(ConfigStore._url + "/users")
             })
             .then((res) => {
                 setAllUsers(res.filter(item => item.business_name === myBusiness));

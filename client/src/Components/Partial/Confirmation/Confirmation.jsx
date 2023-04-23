@@ -32,7 +32,7 @@ const Confirmation = observer(() => {
                     resolve();
                 })
                 .then(() => {
-                    return RequestStore.doDelete("/posts", {
+                    return RequestStore.doDelete(ConfigStore._url + "/posts", {
                         id: ConfigStore.postId
                     })
                 })
@@ -41,7 +41,7 @@ const Confirmation = observer(() => {
                         ConfigStore.setIsConfirmShow(false);
                         ConfigStore.setPosts(ConfigStore.posts.filter((post) => post._id !== ConfigStore.postId));
                         // ConfigStore.setPostsHistory(ConfigStore.postsHistory.push((post) => post._id !== ConfigStore.postId));
-                        RequestStore.doGet("/oldPosts/" + ConfigStore.businessName)
+                        RequestStore.doGet(ConfigStore._url + "/oldPosts/" + ConfigStore.businessName)
                         .then((res) => {
                             ConfigStore.setPostsHistory(res);
                         });
@@ -61,7 +61,7 @@ const Confirmation = observer(() => {
                     resolve();
                 })
                 .then(() => {
-                    return RequestStore.doPost("/returnPost", {
+                    return RequestStore.doPost(ConfigStore._url + "/returnPost", {
                         id: ConfigStore.postId
                     })
                 })
@@ -89,7 +89,7 @@ const Confirmation = observer(() => {
                     resolve();
                 })
                 .then(() => {
-                    return RequestStore.doDelete("/forever", {
+                    return RequestStore.doDelete(ConfigStore._url + "/forever", {
                         id: ConfigStore.postId
                     })
                 })

@@ -19,7 +19,7 @@ const AllOffers = observer((props) => {
                 resolve();
             })
             .then(() => {
-                return RequestStore.doGet("/posts/" + myBusinessN)
+                return RequestStore.doGet(ConfigStore._url + "/posts/" + myBusinessN)
             })
             .then((res) => {
                 ConfigStore.setPosts(res);
