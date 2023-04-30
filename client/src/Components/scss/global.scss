@@ -15,6 +15,11 @@ body{
     font-family: "Raleway", sans-serif;
     div#root{
         height: 100%;
+        nav{
+            button{
+                margin-right: 0;
+            }
+        }
         footer{
             width: 100%;
             height: 60px;
@@ -168,13 +173,12 @@ body{
                 }
             }
             footer{
-                padding: 0 8px;
                 button{
                     display: none;
                 }
                 p{
                     font-size: 12px;
-                    width: fit-content;
+                    padding: 0 8px;
                 }
             }
             div.signup{
@@ -201,9 +205,15 @@ body{
             }
         }
         div.MuiModal-root{
+            div.modalFeedback{
+                width: 90% !important;
+            }
             div.MuiBox-root{
                 width: 100%;
             }
+        }
+        div.MuiAlert-action{
+            margin-right: 2px;
         }
     }
 }

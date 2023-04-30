@@ -27,7 +27,13 @@ const InfoAlert = observer(() => {
 
     return(
         <Modal open={ConfigStore.isInfoAlertShow}>
-            <Alert onClose={handleClose} severity={ConfigStore.severity} sx={{ width: '100%' }}>
+            <Alert onClose={handleClose} severity={ConfigStore.severity} sx={{
+                width: '100%',
+                paddingTop: "6px",
+                paddingBottom: "6px",
+                paddingLeft: "4px",
+                paddingRight: "0px"
+            }}>
                 {ConfigStore.textAlert}
             </Alert>
         </Modal>

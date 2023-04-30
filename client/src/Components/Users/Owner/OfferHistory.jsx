@@ -84,7 +84,10 @@ const OfferHistory = observer((props) => {
                     <p>{lng === "de" ? language.cond.de : language.cond.en}: {post.condition}</p>
                     <p>{lng === "de" ? language.required_bon.de : language.required_bon.en}: {post.required_bonuses}</p>
                     <p>{lng === "de" ? language.gift.de : language.gift.en}: {post.gift}</p>
-                    <Box>
+                    <Box style={{
+                        display: "flex",
+                        justifyContent: "flex-end"
+                    }}>
                         <Button
                             onClick={returnPost}
                             id={post._id}
