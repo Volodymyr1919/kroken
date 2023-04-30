@@ -28,9 +28,9 @@ function App() {
           <Route path="/user" element={<Visitor />} />
         </Route>
         <Route element={<NFLayout />}>
-          <Route path="*" element={<Notfound />}/>
           <Route path="/income" element={<Income />} />
           <Route path="/outcome" element={<Outcome />} />
+          <Route path="*" element={<Notfound />}/>
         </Route>
       </Routes>
     </>
