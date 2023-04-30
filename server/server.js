@@ -17,7 +17,7 @@ MongoClient.connect(process.env.MONGODB_URI)
 .then(client => {
     console.log('Connected sucessfully to DB');
 
-    app.use(express.static(path.resolve(__dirname, '../client')));
+    app.use(express.static(path.resolve(__dirname, '../client/build')));
     app.use(cors(corsOptions));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
@@ -252,7 +252,7 @@ MongoClient.connect(process.env.MONGODB_URI)
     });
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client/public', 'index.html'));
+        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     });
 
     app.listen(PORT, function() {
