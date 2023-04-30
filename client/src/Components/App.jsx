@@ -30,7 +30,7 @@ function App() {
         <Route element={<NFLayout />}>
           <Route path="/income" element={<Income />} />
           <Route path="/outcome" element={<Outcome />} />
-          {/* <Route path="*" element={<Notfound />}/> */}
+          <Route path="*" element={<Notfound />}/>
         </Route>
       </Routes>
     </>
