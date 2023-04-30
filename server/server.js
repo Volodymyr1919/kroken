@@ -27,10 +27,6 @@ MongoClient.connect(process.env.MONGODB_URI)
             postsCollection     = db.collection('rest_posts'),
             PORT                = process.env.PORT || 3002;
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-    });
-
     app.post('/signin', (req, res) => {
         usersCollection.findOne({
             name: req.body.username, 
@@ -229,14 +225,14 @@ MongoClient.connect(process.env.MONGODB_URI)
         })
     });
 
-    app.use(
-        rateLimit({
-        //   windowMs: 12 * 60 * 60 * 1000,
-          windowMs: 5 * 60 * 1000,
-          max: 1,
-          headers: true
-        })
-    );
+    // app.use(
+    //     rateLimit({
+    //     //   windowMs: 12 * 60 * 60 * 1000,
+    //       windowMs: 5 * 60 * 1000,
+    //       max: 1,
+    //       headers: true
+    //     })
+    // );
 
     app.post('/getbonus', (req, res) => {
         let id = new ObjectId(req.body.id);
@@ -253,6 +249,10 @@ MongoClient.connect(process.env.MONGODB_URI)
                 res.sendStatus(400)
             }
         })
+    });
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     });
 
     app.listen(PORT, function() {
