@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 export default class ConfigStore {
     // _url = "https://023d-2001-a61-2a87-5f01-42ec-7c5e-852f-dee9.ngrok-free.app";
-    _url = "https://kroken-i7e4.onrender.com";
+    _url = "https://kroken.onrender.com";
     isShow = false;
     isInfoAlertShow = false;
     isConfirmShow = false;
