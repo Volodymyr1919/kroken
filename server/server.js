@@ -27,6 +27,10 @@ MongoClient.connect(process.env.MONGODB_URI)
             postsCollection     = db.collection('rest_posts'),
             PORT                = process.env.PORT || 3002;
 
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    });
+
     app.post('/signin', (req, res) => {
         usersCollection.findOne({
             name: req.body.username, 
@@ -249,10 +253,6 @@ MongoClient.connect(process.env.MONGODB_URI)
                 res.sendStatus(400)
             }
         })
-    });
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     });
 
     app.listen(PORT, function() {
