@@ -9,7 +9,7 @@ import Feedback from "../../Partial/Feedback/Feedback";
 import { language } from "../../lang";
 // eslint-disable-next-line no-unused-vars
 import signIn from "./signIn.scss";
-import { faChevronRight, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight, faLock, faUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const SignIn = observer(() => {
 
@@ -17,9 +17,10 @@ const SignIn = observer(() => {
 
   const navigate = useNavigate();
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [lng, setLng] = useState(ConfigStore.lang);
+  const [username, setUsername]   = useState("");
+  const [password, setPassword]   = useState("");
+  const [lng, setLng]             = useState(ConfigStore.lang);
+  const [isVisible, setIsVisible] = useState("password");
     let usNF = `${lng === "de" ? "Benutzer nicht gefunden" : "User not found"}`
     const {
         register,
@@ -64,6 +65,14 @@ const SignIn = observer(() => {
         setLng(ConfigStore.lang);
       }, [ConfigStore.lang]);
 
+      const showPassword = () => {
+        if(isVisible === "password") {
+          setIsVisible("text");
+        } else {
+          setIsVisible("password");
+        }
+      };
+
     return(
       <div className="signin">
         <ErrorModal />
@@ -96,7 +105,7 @@ const SignIn = observer(() => {
                     <div className="login__field">
                         <FontAwesomeIcon icon={faLock} className="login__icon"></FontAwesomeIcon>
                         <input
-                            type="password"
+                            type={isVisible}
                             className="login__input"
                             placeholder={lng === "de" ? language.password.de : language.password.en}
                             {...register("password", {
@@ -111,6 +120,11 @@ const SignIn = observer(() => {
                                 }
                             })}
                         />
+                        <FontAwesomeIcon
+                          icon={isVisible === "password" ? faEyeSlash : faEye}
+                          className="login__icon icon__eye"
+                          onClick={showPassword}
+                        ></FontAwesomeIcon>
                         <p className="errorMessage">{errors.password && errors.password.message}</p>
                     </div>
                     <button type="submit" className="button login__submit">

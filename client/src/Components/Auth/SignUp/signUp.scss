@@ -81,6 +81,13 @@ div.signup{
 			top: 31.5px;
 			color: $icon_input;
 		}
+
+		.icon__eye{
+			right: 0px;
+			&:hover{
+				cursor: pointer;
+			}
+		}
 	
 		.login__input {
 			border: none;
